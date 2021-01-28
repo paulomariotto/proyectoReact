@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+/* mi projecto */
+.image-logo {
+ display: flex;
+ margin: auto;
+ width: 200px;
+}
+.header-class {
+  margin: 20px;
+}
+.h1-voe {
+  text-align: center;
+  position: relative;
+  font-size: 5.5rem;  
+}
+.container-cards {
+  display: block;
+  text-align: center;
+  margin-top: 65px;
+}
+.row-cards {  
+  justify-content: center;
+}
+.img-card {
+  width: 150px;
+  height: 100px;
+}
