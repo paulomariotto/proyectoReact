@@ -1,39 +1,41 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
+import CardWidget from '../CardWidget';
 
 
-function NavbarComponent() {
+
+
+const NavbarComponent = () => {
     return (
         <>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home"></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-           
-            <NavDropdown title="SHOP" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Cervezas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Vinos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Aperitivos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Gaseosas</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Snacks</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4"></NavDropdown.Item>
-            </NavDropdown> 
-            <Nav.Link href="#features">Shop</Nav.Link>
-            <Nav.Link href="#pricing">Mi Cuenta</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">Quien Somos</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Carrito
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="#home"><img className="image-logo" src="/images/urge-delivery-logo.png" alt="logo" /></Navbar.Brand>
+          <Navbar.Brand href="#home"><h4> URGE Delivery</h4></Navbar.Brand><CardWidget />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto nav-style">
+                <NavDropdown title="Shop" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Cervezas</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Vinos</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Espumantes</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Destilados</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Aperitivos</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Sin Alcool</NavDropdown.Item>
+                
+                <NavDropdown.Divider />
+                </NavDropdown>
+              <Nav.Link href="#link">Combos</Nav.Link>
+              <Nav.Link href="#link">Promociones</Nav.Link>
+              <Nav.Link href="#link">Marcas</Nav.Link>              
+            </Nav>
+              <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-success">Search</Button>
+            </Form>
+          </Navbar.Collapse>
+          
+        </Navbar>      
         </>
-    );
+    )
 }
 export default NavbarComponent;
