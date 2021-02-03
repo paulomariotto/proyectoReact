@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
-import CardWidget from '../CardWidget';
+import CartWidget from '../CartWidget';
 
 
 
@@ -8,11 +8,11 @@ import CardWidget from '../CardWidget';
 const NavbarComponent = () => {
     return (
         <>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="md">
           <Navbar.Brand href="#home"><img className="image-logo" src="/images/urge-delivery-logo.png" alt="logo" /></Navbar.Brand>
-          <Navbar.Brand href="#home"><h4> URGE Delivery</h4></Navbar.Brand><CardWidget />
+          <Navbar.Brand href="#home"><h4> URGE Delivery</h4></Navbar.Brand><CartWidget />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" >
             <Nav className="mr-auto nav-style">
                 <NavDropdown title="Shop" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Cervezas</NavDropdown.Item>
