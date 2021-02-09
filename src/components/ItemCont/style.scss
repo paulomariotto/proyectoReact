@@ -1,0 +1,33 @@
+.ul-contador{
+    list-style: none;
+     width: 120px;
+     height: 35px;
+     padding: 0;
+     margin: 10px 0px 0px 0px;
+     border: 2px solid blue;
+  font-weight: bold;
+  position: relative;
+    top: -10px;
+    margin: auto;
+  }
+  .li-contador{
+    display: inline-block;
+  }
+  .li-button-menos {
+    position: relative;
+   left: -25px;
+  }
+  .li-button-mas {
+    position: relative;
+    left: 25px;
+    
+  }
+  .button-li-1{
+    border: 0;
+    height: 0;
+  }
+  .button-li-2 {
+    border: 0;
+    height: 0;
+  }
+  

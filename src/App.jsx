@@ -3,46 +3,54 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './components/navbar/index.jsx';
 import ImagenLogo from './components/header/index.jsx';
 import ItemListContainer from './containers/ItemListContainer';
-import CardProducto from './components/CardProducto.jsx';
-import {Container, Row, Col} from 'react-bootstrap';
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 
 const App = ()  => {
   return (
-    <>  
+    <BrowserRouter>
     <header>
     <ImagenLogo />
     <NavbarComponent />
     </header>
+    
+    <Switch>
+    <Route exact path="/"> 
     <ItemListContainer greeting = {"Bienvenidos al Delivery mas Rapido de la Argentina!"}/>
+    </Route>
     
+    <Route exact path="/Shop/Cerveza">
+    </Route>
+
+    <Route exact path="/Shop/Vinos">
+    </Route>
+
+    <Route exact path="/Shop/Espumantes">
+    </Route>
+
+    <Route exact path="/Shop/Destilados">
+    </Route>
     
-    <div>
-    <Container className="container-cards">
-    <Row md={4} className="row-cards">
-        <Col>
-        <div>
-          <CardProducto image=<img src="/images/bebidas/andes-roja.webp" alt="logo"/> nombre="Andes Roja" descripcion="cerveza" precio="$100" />
-          
-          </div>
-        </Col> 
-        <Col>
-        <div>
-          <CardProducto image=<img src="/images/bebidas/andes-rubia.webp" alt="logo" /> nombre="Andes Rubia" descripcion="cerveza" precio="$100" />
-          </div>
-        </Col> 
-        <Col>
-        <div>
-          <CardProducto image=<img src="/images/bebidas/andes-ipa-andina.webp" alt="logo" /> nombre="Andes Ipa Andina" descripcion="cerveza" precio="$100" />
-          </div>
-          </Col>       
-    </Row>
-</Container>
-     </div> 
-   </>
+    <Route exact path="/Shop/Aperitivos">
+    </Route>
+
+    <Route exact path="/Shop/Sin Alcool">
+    </Route>
+
+    
+    <Route exact path="/Combos">
+    </Route>
+
+    <Route exact path="/Promociones">
+    </Route>
+
+    <Route exact path="/Marcas">
+    </Route>
+
+    </Switch>
+    </BrowserRouter>
+   
   );
 }
-
 export default App;

@@ -5,12 +5,13 @@ import CartWidget from '../CartWidget';
 
 
 
+
 const NavbarComponent = () => {
     return (
         <>
         <Navbar bg="light" expand="md">
           <Navbar.Brand href="#home"><img className="image-logo" src="/images/urge-delivery-logo.png" alt="logo" /></Navbar.Brand>
-          <Navbar.Brand href="#home"><h4> URGE Delivery</h4></Navbar.Brand><CartWidget />
+          <Navbar.Brand href="#home"><h4> URGE Delivery</h4></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" >
             <Nav className="mr-auto nav-style">
@@ -33,7 +34,7 @@ const NavbarComponent = () => {
               <Button variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
-          
+          <CartWidget />
         </Navbar>      
         </>
     )
