@@ -1,26 +1,28 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
-import ItemCount from '../ItemCont'
+
+import ItemDetail from '../ItemDetail'
+
 import "./style.scss"
 
-const Item = ({product}) => {
+const Item = ({ product }) => {
+
+
+
     return (
         <div className="card-item">
-        <Card><p>Stock = {product.stock}</p>
+        <Card>
         <img className="img-card" src={product.imagen} />
 
         <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
-          
-          <Card.Text>
-            {product.descripcion}
+          <Card.Title>{product.name}</Card.Title>          
+          <Card.Text>            
             <p>${product.precio}</p>
           </Card.Text>
-          <Button variant="primary">Agregar al Carrito</Button>
+          <Button variant="primary"><ItemDetail>Agregar al Carrito</ItemDetail></Button>
           
         </Card.Body>
-      </Card>
-      
+      </Card>    
         </div>
     )
 }

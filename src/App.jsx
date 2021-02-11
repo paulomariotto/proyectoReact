@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './components/navbar/index.jsx';
 import ImagenLogo from './components/header/index.jsx';
 import ItemListContainer from './containers/ItemListContainer';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 
@@ -20,22 +20,22 @@ const App = ()  => {
     <ItemListContainer greeting = {"Bienvenidos al Delivery mas Rapido de la Argentina!"}/>
     </Route>
     
-    <Route exact path="/Shop/Cerveza">
+    <Route exact path="/Shop/:Cerveza">
     </Route>
 
-    <Route exact path="/Shop/Vinos">
+    <Route exact path="/Shop/:Vinos">
     </Route>
 
-    <Route exact path="/Shop/Espumantes">
+    <Route exact path="/Shop/:Espumantes">
     </Route>
 
-    <Route exact path="/Shop/Destilados">
+    <Route exact path="/Shop/:Destilados">
     </Route>
     
-    <Route exact path="/Shop/Aperitivos">
+    <Route exact path="/Shop/:Aperitivos">
     </Route>
 
-    <Route exact path="/Shop/Sin Alcool">
+    <Route exact path="/Shop/:Sin Alcool">
     </Route>
 
     

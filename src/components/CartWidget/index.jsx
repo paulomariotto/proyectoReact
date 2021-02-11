@@ -3,8 +3,8 @@ const CartWidget = () => {
     return (
        <>
        
+       <img className="image-carrito" src="/images/cart-fill.svg" alt="carrito" /> 
        
-        <img className="image-carrito" src="/images/cart-fill.svg" alt="carrito" /> 
        
  </>
     )
