@@ -1,17 +1,17 @@
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComponent from './components/navbar/index.jsx';
-import ImagenLogo from './components/header/index.jsx';
+import Header from './components/header/index.jsx';
 import ItemListContainer from './containers/ItemListContainer';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-
-
+import Cerveza from './components/Shop/Cerveza/index.jsx'
+import Shop from '../src/components/Shop/Shop'
 
 const App = ()  => {
   return (
     <BrowserRouter>
     <header>
-    <ImagenLogo />
+    <Header />
     <NavbarComponent />
     </header>
     
@@ -21,6 +21,7 @@ const App = ()  => {
     </Route>
     
     <Route exact path="/Shop/:Cerveza">
+    <Shop><Cerveza /></Shop>
     </Route>
 
     <Route exact path="/Shop/:Vinos">

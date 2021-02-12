@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function ImagenLogo () {
+function Header () {
     return (
         <>
         <header id="header" className="header-class" fixed="top">
@@ -12,4 +12,4 @@ function ImagenLogo () {
         </>
     );
 }
-export default ImagenLogo;
+export default Header;
