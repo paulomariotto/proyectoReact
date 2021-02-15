@@ -1,52 +1,25 @@
-import React,  { useState } from 'react';
-import  ItemCount  from '../components/ItemCont';
-import productosList from '../components/productos/productosList.jsx'
-import ItemList from '../components/ItemList/ItemList.jsx'
-// import { Link } from 'react-router-dom'
+import React,  { useState, useEffect} from 'react';
+import ItemList from '../components/ItemList/ItemList.jsx';
 
-const ItemListContainer = (props) => {
 
-    const [contador, setContador] = useState(1)
-    
-    const onAdd = (stock) => {
-        if(contador < stock){
-            setContador(contador + 1)
-        }else{
-            alert ("No hay stock")
-        }        
-    }
+import ItemsPromise from '../components/productos/productosList.jsx'
 
-    const onSubstract = (stock) => {
-        if (contador > 1) {
-            setContador(contador - 1)            
-        } else {
-            alert("El Valor es menor a lo que podemos vender")
-            
-        }
 
-    }
-        const [products, setProducts] = React.useState([])
-
-        React.useEffect(() => {
-          const myPromise = new Promise((resolve, reject) => {
-            setTimeout (() => resolve(productosList), 3000)
-
-        })
-
-        myPromise.then((result) => setProducts(result))
-    
-        }, [])
+const ItemListContainer = ( {greeting}) => {
+   
+        const [prod, setProd] = useState([])
         
-
+        useEffect (() => {
+        ItemsPromise.then((result) => setProd(result))
+        }, [])
+           
+      
+        
     return (
         <>
                      
-                <h2 className="greeting-tester"> {props.greeting} </h2>
-              
-             <ItemList products={products} />
-           <ItemCount stock={10} contador={contador} onAdd={onAdd}
-           onSubstract={onSubstract}/> 
-          
+                <h1 className="greeting-tester"> {greeting} </h1>
+                {prod.length < 1 ? <h2>Cargando...</h2> : <ItemList items={prod} />} 
         </>
 
     );

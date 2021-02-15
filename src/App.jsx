@@ -4,8 +4,13 @@ import NavbarComponent from './components/navbar/index.jsx';
 import Header from './components/header/index.jsx';
 import ItemListContainer from './containers/ItemListContainer';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import Cerveza from './components/Shop/Cerveza/index.jsx'
-import Shop from '../src/components/Shop/Shop'
+import ItemDetailContainer from './components/ItemDetailContainer/index'
+import Aperitivos from './components/Shop/Aperitivos'
+import Cerveza from './components/Shop/Cerveza'
+import Destilados from './components/Shop/Destilados'
+import Espumantes from './components/Shop/Espumantes'
+import sinAlcool from './components/Shop/Sin Alcool'
+import Vinos from './components/Shop/Vinos'
 
 const App = ()  => {
   return (
@@ -19,27 +24,32 @@ const App = ()  => {
     <Route exact path="/"> 
     <ItemListContainer greeting = {"Bienvenidos al Delivery mas Rapido de la Argentina!"}/>
     </Route>
-    
-    <Route exact path="/Shop/:Cerveza">
-    <Shop><Cerveza /></Shop>
+    <Route exact component={ItemDetailContainer} path="/product/:id" />
+
+    <Route path="/Shop/:Aperitivos">
+    <Aperitivos></Aperitivos>
     </Route>
 
-    <Route exact path="/Shop/:Vinos">
+    <Route path="/Shop/:Cerveza">
+    <Cerveza></Cerveza>
     </Route>
 
-    <Route exact path="/Shop/:Espumantes">
+    <Route path="/Shop/:Destilados">
+    <Destilados></Destilados>
     </Route>
 
-    <Route exact path="/Shop/:Destilados">
-    </Route>
-    
-    <Route exact path="/Shop/:Aperitivos">
+    <Route path="/Shop/:Espumantes">
+    <Espumantes></Espumantes>
     </Route>
 
-    <Route exact path="/Shop/:Sin Alcool">
+    <Route path="/Shop/:Sin Alcool">
+    <sinAlcool></sinAlcool>
     </Route>
 
-    
+    <Route path="/Shop/:Vinos">
+    <Vinos></Vinos>
+    </Route>
+
     <Route exact path="/Combos">
     </Route>
 
