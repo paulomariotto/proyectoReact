@@ -1,4 +1,4 @@
-const productosList = () =>{
+export const productosList = () =>{
   return [
     //Cerveza
     { id:"1", categoriaId:"Cerveza", name:"Andes Rubia", descripcion:"Cerveza", precio:100, imagen: "/images/bebidas/andes-rubia.webp", stock:200},

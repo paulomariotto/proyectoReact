@@ -16,12 +16,13 @@ const NavbarComponent = () => {
           <Navbar.Collapse id="basic-navbar-nav" >
             <Nav className="mr-auto nav-style">
                 <NavDropdown title="Shop" id="basic-nav-dropdown">
-                <NavDropdown.Item><Link to={'/Shop/Cerveza'}>Cervezas</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link to={'/Shop/Vinos'}>Vinos</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link to={'/Shop/Espumantes'}>Espumantes</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link to={'/Shop/Destilados'}>Destilados</Link></NavDropdown.Item>
-                <NavDropdown.Item><Link to={'/Shop/Sin Alcool'}>Sin Alcool</Link></NavDropdown.Item>
+                
                 <NavDropdown.Item><Link to={'/Shop/Aperitivos'}>Aperitivos</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/Shop/Cerveza'}>Cerveza</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/Shop/Destilados'}>Destilados</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/Shop/Espumantes'}>Espumantes</Link></NavDropdown.Item>               
+                <NavDropdown.Item><Link to={'/Shop/Sin Alcool'}>Sin Alcool</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link to={'/Shop/Vinos'}>Vinos</Link></NavDropdown.Item>
                 
                 <NavDropdown.Divider />
                 </NavDropdown>

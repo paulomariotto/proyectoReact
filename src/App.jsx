@@ -6,7 +6,7 @@ import ItemListContainer from './containers/ItemListContainer';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/index'
 import Aperitivos from './components/Shop/Aperitivos'
-import Cerveza from './components/Shop/Cerveza'
+import Cerveza from './components/Shop/Cerveza/'
 import Destilados from './components/Shop/Destilados'
 import Espumantes from './components/Shop/Espumantes'
 import sinAlcool from './components/Shop/Sin Alcool'
