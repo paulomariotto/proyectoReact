@@ -53,9 +53,10 @@ export const productosList = () =>{
 const ItemsPromise = new Promise((rej, res) => {
   setTimeout(() => {
     rej(productosList("1"));
-  }, 2000);
+  }, 1000);
 });
 
 
 
 export default ItemsPromise
+
