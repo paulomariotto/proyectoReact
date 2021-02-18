@@ -13,7 +13,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <>
       <h1 className="greeting-tester"> {greeting} </h1>
-      {prod.length < 1 ? <h2>Cargando...</h2> : <ItemList items={prod} />}
+      {prod.length < 1 ? <h3>Cargando...</h3> : <ItemList items={prod} />}
     </>
   );
 };

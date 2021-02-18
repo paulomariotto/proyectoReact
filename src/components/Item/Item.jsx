@@ -1,28 +1,32 @@
 import React from "react";
-import "./style.scss";
+import "./Item.scss";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
-  console.log(item);
-
   return (
     <>
-      <div className="card-item">
-        <Card>
-          <img className="img-card" src={item.imagen} alt="" />
-          <Link to={`/product/${item.id}`} className="btn btn-primary">
-            ver mas
-          </Link>
-          <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-
-            <Card.Text>
-              <p>${item.precio}</p>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
+      <container>
+        <row className="row-item">
+          <ul className="ul-item">
+            <li className="li-item">
+              <Card className="card-item">
+                <img className="item-img" src={item.imagen} alt="" />
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Text>
+                  <p>
+                    <strong>Precio ${item.precio} c/u</strong>
+                  </p>
+                  <Link to={`/product/${item.id}`} className="detalle-item">
+                    ver mas
+                  </Link>
+                </Card.Text>
+              </Card>
+            </li>
+          </ul>
+        </row>
+      </container>
+      <br></br>
     </>
   );
 };

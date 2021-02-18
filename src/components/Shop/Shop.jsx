@@ -12,11 +12,11 @@ const Shop = () => {
     ItemsPromise.then((resp) => {
       setShopItems(resp.filter((bebi) => bebi.categoriaId === categoriaId));
     });
-  }, []);
+  }, [categoriaId]);
 
   return (
     <>
-      <h2>{categoriaId}</h2>
+      <h2 className="text-center">{categoriaId}</h2>
      <ItemList items={shopItems} />   
        </>
   );

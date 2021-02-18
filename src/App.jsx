@@ -9,9 +9,10 @@ import Shop from "./components/Shop/Shop";
 import Combos from "./components/Combos";
 import Promociones from "./components/Promociones";
 import Marcas from "./components/Marcas";
-
+import {CartContext} from './Context/CartContext'
 const App = () => {
   return (
+    <CartContext.Provider value={[]}>
     <BrowserRouter>
       <header>
         <Header />
@@ -41,6 +42,7 @@ const App = () => {
         </Route>
       </Switch>
     </BrowserRouter>
+    </CartContext.Provider>
   );
 };
 export default App;

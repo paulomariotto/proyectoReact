@@ -1,20 +1,24 @@
 # Urge Delivery
 
 
-
 ## Un Projecto de Paulo Mariotto para el curso de React.js para CoderHouse.
 
 Es un projecto de E-commerce para un emprendimento de venta de bebidas donde los clientes
 los clientes eligen lo que quieren comprar y lo enviamos a su domicilio.
 
-### NPM
+
+### NPM 
 
 Para este proyecto es necesario utilizar npm. La Version utilizada es la 6.14.10. Para poder ejecutar el programa
 se debe utilizar el comando npm start
 
+### NPM Install
+
+Para instalar React tenes que usar el codigo de instalacion npm install -g create-react-app
+
 ### REACT
 
-Se utiliza la versionde React 17.0.1. Se importan los siguientes hooks para el funcionamento del programa: useState y useEffect
+Se utiliza la version de React 17.0.1. Se importan los siguientes hooks para el funcionamento del programa: useState y useEffect
 
 ### REACT-ROUTER-DOM
 
@@ -25,3 +29,5 @@ Para el funcionamiento de la rutas y navegacion del programa se implemento React
 ### Bootstrap
 
 Los estilos de CSS de esta pagina son principalmente hechos con React-Bootstrap version 1.4.3 y Bootstrap version 4.6.0 importados mediante CDN. componentes que utilizan: Buttons, Card, Nav, NavDrpdown, Form, FormControl
+
+![](GIF-PROYECTO-REACT.gif)

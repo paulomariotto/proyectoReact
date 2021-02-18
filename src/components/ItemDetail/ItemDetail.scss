@@ -1,0 +1,27 @@
+.container {
+        .card-detail {
+          text-align: center;
+        }
+        .row {
+          border: 1px solid;
+            .col-img {
+                .img-card-detail {
+                  width: 270px;
+                  height:485px;
+                }
+            }
+            .col-card { 
+              text-align: center;
+                      .card-body-detail {
+                        border: 0;
+                        position: relative;
+                        top: 30px; 
+                                    .seguir-detail {
+                                      color: white;
+                                    }                                      
+                      }             
+            }
+        }        
+}
+
+
