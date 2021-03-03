@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     ItemsPromise.then((resp) => {
       setItem(resp.find((li) => li.id === id));
     });
-  }, []);
+  }, [id]);
   return (
     <>
       <ItemDetail item={item} />

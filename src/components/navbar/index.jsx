@@ -7,7 +7,7 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
-import CartWidget from "../CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 const NavbarComponent = () => {
@@ -66,7 +66,7 @@ const NavbarComponent = () => {
             <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
-        <CartWidget />
+         <Link to={"/Cart"}><CartWidget /></Link>
       </Navbar>
     </>
   );

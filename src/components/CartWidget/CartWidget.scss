@@ -1,0 +1,17 @@
+
+  .cerrado {
+    display: none;
+  }
+
+  
+
+  .abierto {
+    z-index: 9999;
+    width: 30%;
+    height: 80%;
+    margin-top: 100px;
+    position: fixed;
+    top:-5%;
+    background-color: rgb(245, 243, 243);
+    padding: 20px
+  }

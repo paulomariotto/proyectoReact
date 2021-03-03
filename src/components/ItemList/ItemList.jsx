@@ -1,7 +1,7 @@
 import Item from "../Item/Item.jsx";
 
 export const ItemList = ({ items }) => {
-  console.log(items);
+  
 
   return (
     <>

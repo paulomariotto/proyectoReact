@@ -1,8 +1,9 @@
 import "./ItemCont.scss";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-
 const ItemCount = ({ onAdd }) => {
+ 
+ 
   const [contador, setContador] = useState(1);
 
   const sumar = () => {
@@ -40,7 +41,7 @@ const ItemCount = ({ onAdd }) => {
             </button>
           </li>
         </ul>
-        <Button variant="primary" onClick={handlerOnAdd}>
+        <Button variant="primary" onClick={(handlerOnAdd)}>
           Agregar al Carrito
         </Button>
       </div>

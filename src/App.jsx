@@ -9,12 +9,14 @@ import Shop from "./components/Shop/Shop";
 import Combos from "./components/Combos";
 import Promociones from "./components/Promociones";
 import Marcas from "./components/Marcas";
-import {CartContext} from './Context/CartContext'
+import Cart from "./components/Cart/Cart"
+import CartProvider from './Context/CartContext'
 const App = () => {
-  return (
-    <CartContext.Provider value={[]}>
-    <BrowserRouter>
-      <header>
+  return (   
+    
+      <BrowserRouter>
+      <CartProvider>
+    <header>
         <Header />
         <NavbarComponent />
       </header>
@@ -40,9 +42,13 @@ const App = () => {
         <Route exact path="/Marcas">
           <Marcas></Marcas>
         </Route>
-      </Switch>
-    </BrowserRouter>
-    </CartContext.Provider>
+
+        <Route exact path="/Cart"> 
+        <Cart></Cart>
+        </Route>
+      </Switch> 
+      </CartProvider>   
+    </BrowserRouter>   
   );
 };
 export default App;
