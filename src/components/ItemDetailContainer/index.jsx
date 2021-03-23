@@ -1,22 +1,44 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import ItemsPromise from "../productos/productosList";
+import { getFirestore } from "../Firebase"
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
-  const { id } = useParams();
+    const [prod, setProd] = useState({});  
+    const [loading,setLoading] = useState(false);
+    const {ID} = useParams();
 
-  useEffect(() => {
-    ItemsPromise.then((resp) => {
-      setItem(resp.find((li) => li.id === id));
-    });
-  }, [id]);
+    useEffect(() => {  
+        setLoading(true);  
+        const dataBase = getFirestore();
+        const productList = dataBase.collection("Shop")     
+        
+        const loadProductList = new Promise ((resolve, reject) => {
+        
+            resolve(productList.get().then((value) => {
+                let aux = value.docs.map(e => {
+                return {...e.data(), id: e.id} 
+               
+             })
+             return aux.sort((a,b) => {if (a.name < b.name){return -1}; if (a.name > b.name){return 1}; return 0})
+            }))
+        })
+
+        loadProductList.then((database) => {
+        const selectedProduct = database.find((e) => e.id === ID)
+        setProd(selectedProduct)
+        setLoading(false)
+    })
+
+      }, [ID]);
+  
   return (
     <>
-      <ItemDetail item={item} />
-    </>
-  );
-};
+    {loading}
+    <h2>Detalle del Producto</h2>    
+    <ItemDetail prod={prod} />               
+  </>
+)
+}
 
 export default ItemDetailContainer;

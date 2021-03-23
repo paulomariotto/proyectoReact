@@ -31,22 +31,22 @@ const NavbarComponent = () => {
           <Nav className="mr-auto nav-style">
             <NavDropdown title="Shop" id="basic-nav-dropdown">
               <NavDropdown.Item>
-                <Link to={"/Shop/Aperitivos"}>Aperitivos</Link>
+                <Link to={"/Shop/Aperitivo"}>Aperitivos</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link to={"/Shop/Cerveza"}>Cerveza</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={"/Shop/Destilados"}>Destilados</Link>
+                <Link to={"/Shop/Destilado"}>Destilados</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={"/Shop/Espumantes"}>Espumantes</Link>
+                <Link to={"/Shop/Espumante"}>Espumantes</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={"/Shop/sinAlcool"}>Sin Alcool</Link>
+                <Link to={"/Shop/SinAlcool"}>Sin Alcool</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={"/Shop/Vinos"}>Vinos</Link>
+                <Link to={"/Shop/Vino"}>Vinos</Link>
               </NavDropdown.Item>
 
               <NavDropdown.Divider />

@@ -3,7 +3,7 @@ import "./Item.scss";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Item = ({ item }) => {
+const Item = ({ prod }) => {
   return (
     <>
       <container>
@@ -11,13 +11,13 @@ const Item = ({ item }) => {
           <ul className="ul-item">
             <li className="li-item">
               <Card className="card-item">
-                <img className="item-img" src={item.imagen} alt="" />
-                <Card.Title>{item.name}</Card.Title>
+                <img className="item-img" src={prod.imagen} alt="" />
+                <Card.Title>{prod.name}</Card.Title>
                 <Card.Text>
                   <p>
-                    <strong>Precio ${item.precio} c/u</strong>
+                    <strong>Precio ${prod.precio} c/u</strong>
                   </p>
-                  <Link to={`/product/${item.id}`} className="detalle-item">
+                  <Link to={`/product/${prod.id}`} className="detalle-item">
                     ver mas
                   </Link>
                 </Card.Text>

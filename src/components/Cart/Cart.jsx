@@ -2,17 +2,20 @@ import { useContext } from "react";
 import { CartContext } from "./../../Context/CartContext";
 import { Link } from "react-router-dom";
 import { Button, Container, Row, Col, ListGroup } from "react-bootstrap";
+
+
 const Cart = () => {
   const { cart, setCart, setCarrito, removerProducto } = useContext(CartContext);
 
   const totalFinal = cart.reduce((prev, cur) => {
-    return prev + cur.quantity * cur.precio;
+    return prev + (cur.quantity*cur.precio)
   }, 0);
   console.log(totalFinal);
   console.log(cart);
  
 
-  return cart.length === 0 ? (
+  return (
+  cart.length === 0 ?(
     <div>
       <Container>
         <h2>Su carrito</h2>
@@ -35,7 +38,7 @@ const Cart = () => {
         </Row>
       </Container>
     </div>
-  ) : (
+  ):(
     <div>
       <Container>
         <h2>Su carrito</h2>
@@ -51,41 +54,40 @@ const Cart = () => {
       </Container>
       <Container>
         <h5 className="text-center">Los productos en su carrito son:</h5>
-        {cart.map((item, index) => {
+        {cart.map((prod, index) => {
           return (
             <Row key={index}>
               <Col>
-                <img className="" src={item.imagen} alt="" />
+              <img src={prod.imagen} alt="" />
               </Col>
 
               <Col>
                 <ListGroup variant="flush">
-                  <ListGroup.Item>Nombre: {item.descripcion}</ListGroup.Item>
                   <ListGroup.Item>
-                    Precio Unitario:$ {item.precio}
+                  Nombre:{prod.name}
                   </ListGroup.Item>
-                  <ListGroup.Item>Cantidad: {item.quantity}</ListGroup.Item>
+                  <ListGroup.Item>
+                    Precio Unitario:$ {prod.precio}
+                  </ListGroup.Item>
+                  <ListGroup.Item>Cantidad:{prod.quantity}</ListGroup.Item>
                 </ListGroup>
               </Col>
-
               <Col>
                 <div>
                   <span className="font-italic">
-                    Subtotal: $ {item.quantity * item.precio}{" "}
+                    Subtotal: $ {prod.quantity * prod.precio}{" "}
                   </span>
                 </div>
               </Col>
               <Col>
                 <div>
-                  <Button className="close" onClick={() => {removerProducto(item.id)}}>
+                  <Button className="close" onClick={() => {removerProducto(prod.id)}}>
                     X
                   </Button>
                 </div>
-              </Col>           
-         
-             </Row>
-          );
-        })}
+              </Col>       
+             </Row>          
+        )})}
         <Row>
           <h4>Total: ${totalFinal}</h4>
         </Row>
@@ -93,10 +95,13 @@ const Cart = () => {
           <Button variant="primary" onClick={() => setCart([])}>
             Vaciar Carrito
           </Button>
+          <Link to={'/Checkout'}>
           <Button variant="primary">Ir a Checkout</Button>
+          </Link>
         </Row>
       </Container>
     </div>
-  );
+  )
+  )
 };
 export default Cart;

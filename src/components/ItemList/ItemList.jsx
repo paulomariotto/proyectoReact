@@ -1,12 +1,12 @@
 import Item from "../Item/Item.jsx";
 
-export const ItemList = ({ items }) => {
+export const ItemList = ({ prod }) => {
   
 
   return (
     <>
-      {items.map((item) => (
-        <Item key={item.id} item={item} />
+      {prod.map((prod) => (
+        <Item key={prod.id} prod={prod} />
       ))}
     </>
   );

@@ -9,23 +9,23 @@ const CartProvider = ({children}) => {
 
     const totalProductos = cart.reduce ((prev,cur) => prev + cur.quantity, 0)
 
-    const [productoAtual, setProductoAtual] = useState ()
+    const [productoAtual, setProductoAtual] = useState()
 
-    const productoExiste = cart.find (e => e.id === productoAtual) ? true : false
+    const productoExiste = cart.find(e => e.id === productoAtual) ? true : false
 
-    const addItem = (id, categoriaId, precio, imagen, descripcion, stock, quantity) => {
-        (productoExiste ===false) ? 
-        setCart([...cart,{id: id, categoriaId: categoriaId, precio: precio, descripcion: descripcion, imagen: imagen, stock: stock, quantity: quantity}])
+    const addItem = (namecategoriaId, id, name, precio, imagen, descripcion, stock, quantity, ) => {
+        (productoExiste === false) ? 
+        setCart([...cart, {namecategoriaId:namecategoriaId, id:id, name:name, precio:precio,  imagen:imagen, descripcion:descripcion, stock:stock, quantity:quantity}])
         :
-        cart.forEach( item => {
-            if (item.id === productoAtual){
-                item.quantity = item.quantity + quantity
+        cart.forEach( prod => {
+            if (prod.id === productoAtual){
+                prod.quantity = prod.quantity + quantity
             }
         })
     }
 
     const removerProducto = (id) =>{
-        setCart(cart.filter(product => product.id !== id))
+        setCart(cart.filter(prod => prod.id !== id))
     }
 
     return (

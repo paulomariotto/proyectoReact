@@ -5,12 +5,12 @@ import Header from "./components/header/index.jsx";
 import ItemListContainer from "./containers/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/index";
-import Shop from "./components/Shop/Shop";
 import Combos from "./components/Combos";
 import Promociones from "./components/Promociones";
 import Marcas from "./components/Marcas";
 import Cart from "./components/Cart/Cart"
 import CartProvider from './Context/CartContext'
+import Checkout from './components/Checkout/Checkout'
 const App = () => {
   return (   
     
@@ -23,13 +23,18 @@ const App = () => {
 
       <Switch>
         <Route exact path="/">
-          <ItemListContainer
-            greeting={"Bienvenidos al Delivery mas Rapido de la Argentina!"}
-          />
+         bienennene
         </Route>
-        <Route exact component={ItemDetailContainer} path="/product/:id" />
+        
+        <Route exact path="/Shop/:categoriaID">   
+        <ItemListContainer/> 
+        </Route> 
 
-        <Route exact component={Shop} path="/Shop/:categoriaId"></Route>
+        <Route exact path="/product/:ID">
+        <ItemDetailContainer/>
+        </Route>
+
+        
 
         <Route exact path="/Combos">
           <Combos></Combos>
@@ -46,6 +51,9 @@ const App = () => {
         <Route exact path="/Cart"> 
         <Cart></Cart>
         </Route>
+        <Route exact path="/Checkout">  
+              <Checkout/>
+            </Route>
       </Switch> 
       </CartProvider>   
     </BrowserRouter>   
